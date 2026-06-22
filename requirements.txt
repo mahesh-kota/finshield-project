@@ -1,0 +1,6 @@
+echo "pandas
+numpy
+scikit-learn
+torch
+transformers
+streamlit" > requirements.txt
