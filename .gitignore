@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual environment
+venv/
+
+# Data files (large/raw data shouldn't go on GitHub)
+data/*
+!data/.gitkeep
+
+# Models (large files)
+models/*.pt
+models/*.pth
+models/*.bin
+
+# Environment secrets
+.env
+
+# OS files
+.DS_Store
+Thumbs.db
