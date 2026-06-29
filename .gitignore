@@ -8,6 +8,7 @@ venv/
 
 # Data files (large/raw data shouldn't go on GitHub)
 data/*
+!data/stock_universe.txt
 !data/.gitkeep
 
 # Models (large files)
