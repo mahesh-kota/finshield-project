@@ -11,13 +11,14 @@ api_hash = os.getenv("TELEGRAM_API_HASH")
 client = TelegramClient("finshield_session", api_id, api_hash)
 
 # Add 2 public finance channel usernames here (without @)
-channels = ["RawatTraders", "TheOriginalBull"]
+channels = ["BankNifty_Nifty_Intraday_Sensex", "Tips_Zero_To_Hero_Trading", "best_intraday_stock", "intraday_stock_option_banknifty", "Nifty451"]
+
 with client:
     all_messages = []
     for channel in channels:
         print(f"Fetching from: {channel}")
         try:
-            for message in client.iter_messages(channel, limit=100):
+          for message in client.iter_messages(channel, limit=100):
                 if message.text:
                     all_messages.append({
                         "channel": channel,
