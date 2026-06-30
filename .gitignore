@@ -8,6 +8,7 @@ venv/
 
 # Data files (large/raw data shouldn't go on GitHub)
 data/*
+!data/telegram_posts_labelled.csv
 !data/stock_universe.txt
 !data/.gitkeep
 
