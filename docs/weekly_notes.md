@@ -116,3 +116,9 @@
 
 **- Start Hinglish language ID and normalisation pipeline (Stage 2 begins)**
 
+
+
+**## Research finding (Day 15)**
+
+**Tested both large broadcast-style Telegram channels and smaller Hindi-named discussion groups for Hinglish content. Result: <1% of sampled posts contained genuine Hindi-English code-switching; English trading jargon (CE/PE/SL/Target) dominates regardless of channel orientation. Decision: proceed with MuRIL fine-tuning on existing English-dominant dataset, reframe NLP contribution as "robust to Indian trading community linguistic patterns" rather than "Hinglish-specific." This is documented as an empirical finding for the paper rather than a project limitation.**
+

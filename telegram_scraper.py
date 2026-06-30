@@ -10,13 +10,7 @@ api_hash = os.getenv("TELEGRAM_API_HASH")
 
 client = TelegramClient("finshield_session", api_id, api_hash)
 
-channels = [
-    "BankNifty_Nifty_Intraday_Sensex",
-    "Tips_Zero_To_Hero_Trading",
-    "best_intraday_stock",
-    "intraday_stock_option_banknifty",
-    "Nifty451"
-]
+channels = ["intraday1341", "Share_market_Intraday_tips", "intradaytradingchart", "AmitBhawaniOfficial02"]
 
 MIN_TEXT_LENGTH = 15  # skip very short/junk messages
 
