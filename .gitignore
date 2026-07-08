@@ -18,6 +18,8 @@ data/*
 models/*.pt
 models/*.pth
 models/*.bin
+models/*.safetensors
+models/*.zip
 
 # Environment secrets
 .env
