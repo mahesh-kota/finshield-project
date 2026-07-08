@@ -15,6 +15,7 @@ data/*
 !data/.gitkeep
 
 # Models (large files)
+models/muril_finshield_final/model.safetensors
 models/*.pt
 models/*.pth
 models/*.bin
