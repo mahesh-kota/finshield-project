@@ -1,3 +1,4 @@
+
 import pandas as pd
 import os
 
@@ -6,7 +7,6 @@ OUTPUT_FILE = "data/telegram_posts_labelled.csv"
 
 df = pd.read_csv(INPUT_FILE)
 
-# Resume from existing labels if present
 if os.path.exists(OUTPUT_FILE):
     labelled_df = pd.read_csv(OUTPUT_FILE)
     labelled_ids = set(labelled_df["message_id"].astype(str) + labelled_df["channel"])
@@ -15,11 +15,10 @@ else:
     labelled_ids = set()
 
 print("LABELLING GUIDE:")
-print("0 = Factual/Neutral - market data, no buy/sell call (e.g. 'NIFTY data positive')")
-print("1 = Open Trading Tip - public call WITH target+stoploss shown (e.g. 'Buy LUPIN 2145, Target 2170, SL 2121')")
-print("2 = Suspicious - private group invite links, guaranteed returns, no stop-loss, urgency+secrecy")
-print()
-print("Type 's' to skip, 'q' to quit and save\n")
+print("0 = Factual/Neutral - market data, no buy/sell call")
+print("1 = Open Trading Tip - public call WITH target+stoploss shown")
+print("2 = Suspicious - private group invite links, guaranteed returns, no stop-loss")
+print("\nType 's' to skip, 'q' to quit and save\n")
 
 new_labels = []
 
@@ -47,10 +46,10 @@ for idx, row in df.iterrows():
     row_dict["label"] = int(label)
     new_labels.append(row_dict)
 
-if new_labels:
+    # Auto-save after every label
     new_df = pd.DataFrame(new_labels)
-    combined = pd.concat([labelled_df, new_df], ignore_index=True)
-    combined.to_csv(OUTPUT_FILE, index=False)
-    print(f"\nSaved {len(new_labels)} new labels. Total labelled: {len(combined)}")
-else:
-    print("\nNo new labels added.")
+    save_df = pd.concat([labelled_df, new_df], ignore_index=True)
+    save_df.to_csv(OUTPUT_FILE, index=False)
+    print(f"  [saved {len(save_df)} total]")
+
+print(f"\nDone. Total labelled: {len(labelled_df) + len(new_labels)}")

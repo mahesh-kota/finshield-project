@@ -8,6 +8,7 @@ venv/
 
 # Data files (large/raw data shouldn't go on GitHub)
 data/*
+!data/features.csv
 !data/telegram_posts_labelled.csv
 !data/train.csv
 !data/val.csv
@@ -15,6 +16,7 @@ data/*
 !data/.gitkeep
 
 # Models (large files)
+models/muril_finshield_v2/model.safetensors
 models/muril_finshield_final/model.safetensors
 models/*.pt
 models/*.pth
