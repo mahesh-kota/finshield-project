@@ -15,6 +15,7 @@ data/*
 !data/stock_universe.txt
 !data/.gitkeep
 !data/market_features.csv
+!data/cross_modal_anomalies.csv
 
 # Models (large files)
 models/muril_finshield_v2/model.safetensors
