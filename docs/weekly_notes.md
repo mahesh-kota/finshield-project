@@ -122,3 +122,51 @@
 
 **Tested both large broadcast-style Telegram channels and smaller Hindi-named discussion groups for Hinglish content. Result: <1% of sampled posts contained genuine Hindi-English code-switching; English trading jargon (CE/PE/SL/Target) dominates regardless of channel orientation. Decision: proceed with MuRIL fine-tuning on existing English-dominant dataset, reframe NLP contribution as "robust to Indian trading community linguistic patterns" rather than "Hinglish-specific." This is documented as an empirical finding for the paper rather than a project limitation.**
 
+
+
+**# Week 3 Summary (07 July - 13 July 2026)**
+
+
+
+**## Completed**
+
+**- Day 16-18: MuRIL fine-tuning v1 and v2 - final weighted F1=0.92, accuracy=91.4%**
+
+**- Day 19: Per-post feature extraction - VADER sentiment, urgency score, ticker NER**
+
+**- Day 20: Market anomaly detection - 47 stocks, 50,101 rows, 2304 anomaly days (Jan 2022-Jul 2026)**
+
+**- Day 21: Granger causality test - confirmed social signals lead market by 1-2 days (p=0.004)**
+
+**- Day 22: Isolation Forest cross-modal fusion - 8 anomaly days flagged from 73 overlapping days**
+
+**- Day 23: Streamlit dashboard complete - price charts, anomaly heatmap, MuRIL pie chart, flagged posts table**
+
+**- Day 24: SEBI backtest - 75% recall (3/4 cases), Precision@8=0.38, 11-day early detection**
+
+
+
+**## Key results this week**
+
+**- Granger causality p=0.004 at lag 1 (after first-differencing) — strongest quantitative finding**
+
+**- SEBI backtest confirms system detects real enforcement cases 11 days before regulatory action**
+
+**- Full pipeline operational end-to-end: scrape → classify → anomaly → dashboard**
+
+
+
+**## Issues faced**
+
+**- Isolation Forest requires date overlap between social and market data — resolved by extending market data to Jan 2022**
+
+**- Granger test required first-differencing to achieve stationarity — corrected, finding holds**
+
+**- SEBI backtest stocks not in our universe caused 1 missed case — documented as scope limitation**
+
+
+
+**## Status: All 4 pipeline stages complete**
+
+**Stage 1 (Data) ✅ | Stage 2 (NLP) ✅ | Stage 3 (Anomaly) ✅ | Stage 4 (Dashboard+Eval) ✅**
+
