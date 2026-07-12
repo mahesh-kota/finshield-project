@@ -14,6 +14,7 @@ data/*
 !data/val.csv
 !data/stock_universe.txt
 !data/.gitkeep
+!data/market_features.csv
 
 # Models (large files)
 models/muril_finshield_v2/model.safetensors
