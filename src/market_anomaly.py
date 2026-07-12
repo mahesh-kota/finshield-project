@@ -11,8 +11,7 @@ print(f"Processing {len(tickers)} stocks...")
 
 # Date range — 1 year of data for reliable z-score baselines
 END_DATE = datetime.today().strftime("%Y-%m-%d")
-START_DATE = (datetime.today() - timedelta(days=365)).strftime("%Y-%m-%d")
-
+START_DATE = "2022-01-01"
 results = []
 
 for ticker in tickers:
@@ -46,7 +45,7 @@ for ticker in tickers:
         df["is_anomaly"] = (df["volume_zscore"] > 2) & (df["abnormal_return"].abs() > 0.02)
 
         # Keep last 90 days for analysis
-        df_recent = df.tail(90).copy()
+        df_recent = df.copy()
         df_recent["ticker"] = ticker
         df_recent = df_recent.reset_index()
         df_recent = df_recent[["ticker", "Date", "Close", "Volume",
@@ -55,7 +54,7 @@ for ticker in tickers:
         results.append(df_recent)
 
         anomaly_count = df_recent["is_anomaly"].sum()
-        print(f"OK {ticker} - {len(df_recent)} days, {anomaly_count} anomaly days flagged")
+        print(f"OK {ticker} - {len(df_recent)} days ({df_recent['Date'].min()} to {df_recent['Date'].max()}), {anomaly_count} anomaly days flagged")
 
     except Exception as e:
         print(f"ERROR {ticker}: {e}")
