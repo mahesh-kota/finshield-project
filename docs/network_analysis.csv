@@ -1,0 +1,9 @@
+channel,post_count,suspicious_ratio,tip_ratio,neutral_ratio,degree_centrality
+BankNifty_Nifty_Intraday_Sensex,8,1.0,0.0,0.0,0.14285714285714285
+Tips_Zero_To_Hero_Trading,5,1.0,0.0,0.0,0.14285714285714285
+best_intraday_stock,104,0.3942307692307692,0.5096153846153846,0.09615384615384616,0.14285714285714285
+intraday_stock_option_banknifty,8,0.125,0.5,0.375,0.14285714285714285
+intraday1341,16,1.0,0.0,0.0,0.0
+Share_market_Intraday_tips,2,0.5,0.0,0.5,0.0
+intradaytradingchart,14,0.42857142857142855,0.0,0.5714285714285714,0.0
+AmitBhawaniOfficial02,17,1.0,0.0,0.0,0.0
