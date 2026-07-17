@@ -1,3 +1,16 @@
+"""
+FinShield - Inference Module
+============================
+Runs the trained MuRIL v2 model on new Telegram posts
+to classify them as Neutral (0), Open Trading Tip (1),
+or Suspicious/Pump-Dump (2).
+
+Model: google/muril-base-cased fine-tuned on 174 annotated posts
+Accuracy: 91.4% | Weighted F1: 0.92
+
+Usage:
+    python src/inference.py
+"""
 import torch
 import pandas as pd
 from transformers import AutoTokenizer, AutoModelForSequenceClassification

@@ -1,3 +1,13 @@
+"""
+FinShield - Market Anomaly Detection Module
+==========================================
+Computes daily market anomaly features for 47 NSE mid/small-cap stocks.
+Features: abnormal return, volume z-score, price range z-score, anomaly flag.
+Data: yfinance API | Coverage: Jan 2022 - present | ~50,000 rows
+
+Usage:
+    python src/market_anomaly.py
+"""
 import yfinance as yf
 import pandas as pd
 import numpy as np

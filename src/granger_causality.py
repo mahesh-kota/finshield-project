@@ -1,3 +1,13 @@
+"""
+FinShield - Granger Causality Analysis
+=======================================
+Tests whether suspicious social signals Granger-cause market anomalies.
+Key finding: p=0.0036 at lag 1 — social signals lead market by 1-2 days.
+Methods: ADF stationarity test, Granger F-test (statsmodels)
+
+Usage:
+    python src/granger_causality.py
+"""
 import pandas as pd
 import numpy as np
 from statsmodels.tsa.stattools import grangercausalitytests, adfuller
