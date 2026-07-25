@@ -170,3 +170,65 @@
 
 **Stage 1 (Data) ✅ | Stage 2 (NLP) ✅ | Stage 3 (Anomaly) ✅ | Stage 4 (Dashboard+Eval) ✅**
 
+**# Week 4 Summary (18 July – 25 July 2026)**
+
+
+
+**## Completed**
+
+**- Day 30: Full IEEE-format research paper drafted (6 sections, results table, 10 references)**
+
+**- Day 31: Annotation expanded from 174 to 224 posts (50 new labels, mostly Suspicious from AmitBhawaniOfficial02)**
+
+**- Day 32: MuRIL v3 fine-tuned on expanded dataset — accuracy 93.3%, weighted F1=0.94 (up from 91.4%/0.92)**
+
+**- Day 33: TFT library setup (pending — deferred to next week)**
+
+**- Day 34: Weekly review (today)**
+
+
+
+**## Key results this week**
+
+**- MuRIL v3 improves on v2: accuracy 91.4% → 93.3%, F1 0.92 → 0.94, Suspicious F1 0.91 → 0.95**
+
+**- Granger causality result updated with expanded dataset: p=0.065 at lag 1 (marginally significant, up from p=0.004 with 174 posts) — sensitivity to dataset composition noted as a limitation**
+
+**- SEBI backtest unchanged: 75% recall, 11-day early detection on Sharpline case**
+
+**- Pipeline date format bug fixed (mixed UTC/non-UTC dates from new annotations) across all src/ scripts**
+
+
+
+**## Issues faced and resolved**
+
+**- New annotation posts (2026-07-25 date format) caused ValueError in pd.to\_datetime — fixed by passing format='mixed' across all affected scripts**
+
+**- model.safetensors (950MB) accidentally staged in commit — resolved with git rm --cached + amend + force push**
+
+**- Granger p-value shifted from 0.004 to 0.065 after dataset expansion — documented as sensitivity finding, not a failure**
+
+
+
+**## Open questions for guide**
+
+**- Granger causality result changed with expanded dataset — should we report both results (174-post and 224-post) in the paper, or just the latest?**
+
+**- Is it acceptable to note Granger sensitivity to dataset composition as a limitation rather than a definitive finding?**
+
+
+
+**## Next week plan**
+
+**- Day 35: TFT (Temporal Fusion Transformer) library setup and first training run**
+
+**- Day 36: Dashboard SHAP plot integration**
+
+**- Day 37: Dashboard deployment to Streamlit Cloud**
+
+**- Day 38: End-to-end pipeline testing on new stocks**
+
+**- Day 39: Performance summary document**
+
+**- Day 40: Research paper — abstract and introduction draft**
+
