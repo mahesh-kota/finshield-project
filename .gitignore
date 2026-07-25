@@ -18,6 +18,7 @@ data/*
 !data/cross_modal_anomalies.csv
 
 # Models (large files)
+models/muril_finshield_v3/model.safetensors
 models/muril_finshield_v2/model.safetensors
 models/muril_finshield_final/model.safetensors
 models/*.pt

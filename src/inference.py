@@ -15,7 +15,8 @@ import torch
 import pandas as pd
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 
-MODEL_PATH = "models/muril_finshield_v2"
+MODEL_PATH = "models/muril_finshield_v3"
+
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print(f"Using device: {device}")
 

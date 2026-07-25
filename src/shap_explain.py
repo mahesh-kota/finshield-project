@@ -12,7 +12,7 @@ social_df = pd.read_csv("data/features.csv")
 market_df = pd.read_csv("data/market_features.csv")
 
 # Aggregate social daily
-social_df["date"] = pd.to_datetime(social_df["date"], utc=True).dt.date
+social_df["date"] = pd.to_datetime(social_df["date"], format="mixed", utc=True).dt.date
 social_daily = social_df.groupby("date").agg(
     post_count=("muril_pred", "count"),
     suspicious_ratio=("muril_pred", lambda x: (x == 2).mean()),

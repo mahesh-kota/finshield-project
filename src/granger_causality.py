@@ -20,7 +20,7 @@ market_df = pd.read_csv("data/market_features.csv")
 print("Social features shape:", social_df.shape)
 print("Market features shape:", market_df.shape)
 
-social_df["date"] = pd.to_datetime(social_df["date"], utc=True).dt.date
+social_df["date"] = pd.to_datetime(social_df["date"], format='mixed', utc=True).dt.date
 market_df["Date"] = pd.to_datetime(market_df["Date"]).dt.date
 
 social_daily = social_df.groupby("date").agg(
