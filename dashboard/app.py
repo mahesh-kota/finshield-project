@@ -26,7 +26,7 @@ features_df, market_df, anomalies_df, labelled_df = load_data()
 # Convert dates
 market_df["Date"] = pd.to_datetime(market_df["Date"])
 anomalies_df["date"] = pd.to_datetime(anomalies_df["date"])
-features_df["date"] = pd.to_datetime(features_df["date"], utc=True).dt.tz_localize(None)
+features_df["date"] = pd.to_datetime(features_df["date"], format='mixed', utc=True).dt.tz_localize(None)
 
 # Header
 st.title("🛡️ FinShield")
@@ -201,6 +201,56 @@ st.dataframe(anomaly_display, use_container_width=True, hide_index=True)
 
 # Footer
 st.divider()
+
+# Row 5: SHAP Feature Importance
+st.subheader("🔍 SHAP Feature Importance — What Drives Anomaly Flags?")
+
+col_shap, col_explain = st.columns([1.2, 1])
+
+with col_shap:
+    import os
+    if os.path.exists("docs/shap_summary.png"):
+        st.image("docs/shap_summary.png", caption="SHAP Summary Plot — Isolation Forest Feature Importance", use_container_width=True)
+    else:
+        st.info("SHAP plot not found. Run src/shap_explain.py to generate it.")
+
+with col_explain:
+    st.markdown("**Feature Importance Ranking (SHAP values)**")
+    shap_data = {
+        "Feature": ["avg_urgency", "anomaly_ratio", "avg_range_zscore",
+                    "avg_abnormal_return", "muril_confidence",
+                    "avg_volume_zscore", "avg_sentiment", "suspicious_ratio"],
+        "SHAP Value": [0.457, 0.321, 0.293, 0.277, 0.251, 0.240, 0.196, 0.132],
+        "Signal Type": ["Social", "Market", "Market", "Market",
+                       "Social", "Market", "Social", "Social"]
+    }
+    shap_df = pd.DataFrame(shap_data)
+
+    fig_shap = px.bar(
+        shap_df,
+        x="SHAP Value",
+        y="Feature",
+        orientation="h",
+        color="Signal Type",
+        color_discrete_map={"Social": "#534AB7", "Market": "#F4A261"},
+        title="Mean |SHAP| per Feature",
+    )
+    fig_shap.update_layout(
+        height=320,
+        plot_bgcolor="rgba(0,0,0,0)",
+        paper_bgcolor="rgba(0,0,0,0)",
+        showlegend=True,
+        yaxis=dict(autorange="reversed")
+    )
+    st.plotly_chart(fig_shap, use_container_width=True)
+
+    st.markdown("""
+    **Key insight:** Urgency language in social posts
+    (`avg_urgency`, SHAP=0.457) is the **strongest single predictor**
+    of cross-modal anomaly days — stronger than any market price signal.
+    Manipulation operators signal intent through urgency language
+    *before* price movements materialise.
+    """)
 st.markdown("""
 <div style='text-align:center;color:gray;font-size:12px'>
 FinShield | Data Science Semester Project | MuRIL F1=0.92 |
