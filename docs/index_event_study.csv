@@ -1,0 +1,21 @@
+index,group,event_days,lag,anomaly_share,base_rate,p_greater
+NIFTY,all index posts,34,-2,0.118,0.076,0.259
+NIFTY,all index posts,34,-1,0.059,0.076,0.744
+NIFTY,all index posts,34,0,0.059,0.076,0.744
+NIFTY,all index posts,34,1,0.029,0.076,0.933
+NIFTY,all index posts,34,2,0.088,0.076,0.486
+NIFTY,Suspicious only,21,-2,0.143,0.076,0.213
+NIFTY,Suspicious only,21,-1,0.048,0.076,0.811
+NIFTY,Suspicious only,21,0,0.048,0.076,0.811
+NIFTY,Suspicious only,21,1,0.0,0.076,1.0
+NIFTY,Suspicious only,21,2,0.048,0.076,0.811
+BANKNIFTY,all index posts,34,-2,0.059,0.076,0.744
+BANKNIFTY,all index posts,34,-1,0.029,0.076,0.933
+BANKNIFTY,all index posts,34,0,0.059,0.076,0.744
+BANKNIFTY,all index posts,34,1,0.0,0.076,1.0
+BANKNIFTY,all index posts,34,2,0.059,0.076,0.744
+BANKNIFTY,Suspicious only,24,-2,0.042,0.076,0.852
+BANKNIFTY,Suspicious only,24,-1,0.042,0.076,0.852
+BANKNIFTY,Suspicious only,24,0,0.042,0.076,0.852
+BANKNIFTY,Suspicious only,24,1,0.0,0.076,1.0
+BANKNIFTY,Suspicious only,24,2,0.042,0.076,0.852
