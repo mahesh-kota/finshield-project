@@ -40,15 +40,15 @@
 
 **| Class weighting | No | Yes | Yes |**
 
-**| Accuracy | 88.0% | 91.4% | \*\*93.3%\*\* |**
+| Macro-F1 | — | — | **0.570** |
 
-**| Weighted F1 | 0.82 | 0.92 | \*\*0.94\*\* |**
+| Neutral F1 | — | — | **0.000** |
 
 **| Neutral F1 | 0.00 | 0.73 | \*\*0.73\*\* |**
 
 **| OpenTip F1 | 0.96 | 1.00 | \*\*1.00\*\* |**
 
-**| Suspicious F1 | 0.92 | 0.91 | \*\*0.95\*\* |**
+| Suspicious F1 | — | — | **0.897** |
 
 
 
@@ -78,7 +78,7 @@
 
 
 
-**\*\*Note:\*\* Granger result is sensitive to dataset composition. The 174-post result (p=0.004) is the more cited finding. Larger social corpus needed for robust confirmation.**
+**Note:** Granger result was corrected Nov 2, 2026. Re-analysis with proper stationarity checks showed no robust evidence that social signals lead market anomalies. Reported as a null result.
 
 
 
