@@ -138,7 +138,7 @@
 
 **- Day 20: Market anomaly detection - 47 stocks, 50,101 rows, 2304 anomaly days (Jan 2022-Jul 2026)**
 
-**- Day 21: Granger causality test - confirmed social signals lead market by 1-2 days (p=0.004)**
+**- Day 21: Granger causality test — superseded Nov 2: no robust evidence after stationarity checks**
 
 **- Day 22: Isolation Forest cross-modal fusion - 8 anomaly days flagged from 73 overlapping days**
 
@@ -150,7 +150,7 @@
 
 **## Key results this week**
 
-**- Granger causality p=0.004 at lag 1 (after first-differencing) — strongest quantitative finding**
+**- Granger causality — superseded Nov 2: no robust evidence. Reported as null result.**
 
 **- SEBI backtest confirms system detects real enforcement cases 11 days before regulatory action**
 

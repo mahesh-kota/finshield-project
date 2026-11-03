@@ -1,3 +1,5 @@
+> ⚠️ **CORRECTION (Nov 3, 2026):** Metrics in this document were found to be incorrect on re-measurement. MuRIL v3 actual result: macro-F1 0.570, neutral F1 0.000. SEBI backtest superseded. Granger causality corrected to null result. See FAILURES.md for details.
+
 **# FinShield — Performance Summary**
 
 **\*\*Data Science Semester Project | Team 4 | Amrita Sai Institute\*\***
@@ -152,7 +154,7 @@
 
 **|---|---|**
 
-**| Recall | 75% (3/4 cases) |**
+**| Recall | Superseded — see Sadhna case limitation (Nov 3) |**
 
 **| Precision@K (K=8) | 0.38 |**
 
