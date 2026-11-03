@@ -1,0 +1,5 @@
+period,days,median_ratio_vs_2021,share_gt3x,share_gt10x,share_top5pct
+pre-period,66,inf,1.0,1.0,0.0
+patch 1,56,inf,1.0,1.0,0.018
+patch 2,53,inf,1.0,1.0,0.415
+after,62,inf,1.0,1.0,0.032
