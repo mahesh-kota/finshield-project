@@ -1,3 +1,5 @@
+> ⚠️ **CORRECTION (Nov 3, 2026):** Several entries in this log contain numbers that were later found to be incorrect. The MuRIL v3 result was measured at macro-F1 0.570 (neutral F1 0.000), not 0.94. The SEBI backtest was superseded by the Sadhna case finding. See inline corrections below.
+
 **# Week 1 Summary (22 June - 28 June 2026)**
 
 
@@ -130,7 +132,7 @@
 
 **## Completed**
 
-**- Day 16-18: MuRIL fine-tuning v1 and v2 - final weighted F1=0.92, accuracy=91.4%**
+**- Day 16-18: MuRIL fine-tuning v1 and v2 (superseded — see Nov 3 correction: v3 macro-F1 0.570)**
 
 **- Day 19: Per-post feature extraction - VADER sentiment, urgency score, ticker NER**
 
@@ -142,7 +144,7 @@
 
 **- Day 23: Streamlit dashboard complete - price charts, anomaly heatmap, MuRIL pie chart, flagged posts table**
 
-**- Day 24: SEBI backtest - 75% recall (3/4 cases), Precision@8=0.38, 11-day early detection**
+**- Day 24: SEBI backtest — superseded Nov 3: unsupervised detector showed no lift on Sadhna case; reported as limitation**
 
 
 
@@ -180,7 +182,7 @@
 
 **- Day 31: Annotation expanded from 174 to 224 posts (50 new labels, mostly Suspicious from AmitBhawaniOfficial02)**
 
-**- Day 32: MuRIL v3 fine-tuned on expanded dataset — accuracy 93.3%, weighted F1=0.94 (up from 91.4%/0.92)**
+**- Day 32: MuRIL v3 fine-tuned on expanded dataset — macro-F1 0.570, neutral F1 0.000 (label quality issue diagnosed Nov 3)**
 
 **- Day 33: TFT library setup (pending — deferred to next week)**
 
@@ -190,11 +192,11 @@
 
 **## Key results this week**
 
-**- MuRIL v3 improves on v2: accuracy 91.4% → 93.3%, F1 0.92 → 0.94, Suspicious F1 0.91 → 0.95**
+**- MuRIL v3 result: macro-F1 0.570; open_tip F1 0.815, suspicious F1 0.897, neutral F1 0.000**
 
 **- Granger causality result updated with expanded dataset: p=0.065 at lag 1 (marginally significant, up from p=0.004 with 174 posts) — sensitivity to dataset composition noted as a limitation**
 
-**- SEBI backtest unchanged: 75% recall, 11-day early detection on Sharpline case**
+**- SEBI backtest — superseded Nov 3: see market module limitation note**
 
 **- Pipeline date format bug fixed (mixed UTC/non-UTC dates from new annotations) across all src/ scripts**
 

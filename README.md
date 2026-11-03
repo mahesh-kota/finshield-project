@@ -16,8 +16,9 @@ A semester project by a 4-member Data Science team studying coordinated pump-and
 
 | Metric | Value |
 |---|---|
-| MuRIL v3 accuracy (45-post validation set) | 93.3% |
-| Weighted F1 | 0.94 |
+| MuRIL v3 macro-F1 (45-post validation set) | 0.570 |
+| MuRIL v3 neutral F1 | 0.000 |
+| TF-IDF+LR baseline macro-F1 | 0.844 |
 | Neutral / OpenTip / Suspicious F1 | 0.73 / 1.00 / 0.95 |
 | Granger causality, lag 1 (174 posts) | p = 0.004 (exploratory, not robust) |
 | Granger causality, lag 1 (224 posts) | p = 0.065 (not significant) |
@@ -38,7 +39,7 @@ Indian retail investors are increasingly targeted by coordinated pump-and-dump s
 
 ## Key Findings
 
-1. **NLP classification works**: MuRIL v3 separates Neutral, Open Tip and Suspicious posts at 93.3% accuracy (weighted F1 0.94) on a small, manually labelled set. Balanced class weights raised the minority Neutral class F1 from 0.00 to 0.73.
+1. **NLP classification is partially working**: MuRIL v3 separates Open Tip (F1 0.815) and Suspicious (F1 0.897) well, but never predicts Neutral (F1 0.000). A TF-IDF + logistic regression baseline achieves macro-F1 0.844, outperforming MuRIL's 0.570. Diagnosis: label quality, not model capacity, is the bottleneck — 4 of 5 misclassified neutrals were borderline cases containing advice or promotional language.
 2. **Social-to-market link is not confirmed (exploratory)**: An initial Granger test on 174 posts suggested suspicious-post activity preceded market anomalies (p = 0.004, lag 1). The result was not robust: at 224 posts it weakened to p = 0.065, and event studies on stocks (53 event days) and on NIFTY/BANKNIFTY (up to 169 event days, 3,410 scraped messages) found no significant lead after multiple-testing correction. A pre-specified out-of-sample test is left for future work.
 3. **Urgency language drives the anomaly flags**: Within the Isolation Forest, the urgency score contributed most to flagging the 8 anomalous days. This explains the model, and is not evidence of causation.
 4. **English dominance**: In the posts sampled, genuine Hindi/Hinglish content was under 1%; trading jargon (CE/PE/SL/Target) dominates (small sample).
